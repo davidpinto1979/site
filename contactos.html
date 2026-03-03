@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Porto de Encontro na Leitura</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">
+                <img src="logotipoPLtranspM.png" alt="Logótipo Porto de Encontro na Leitura" class="logo-img">
+            </div>
+            <span class="logo-text">Porto de Encontro na Leitura</span>
+        </div>
+        <div class="header-right">
+            <p class="sub-text">Clubes de Leitura do Porto</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="clubes.html">Clubes Ativos</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="sobre.html">Sobre nós</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="intro">
+            <h2>Contactos</h2>
+            <p>Tem alguma dúvida ou quer sugerir um novo clube? Envie-nos uma mensagem!</p>
+        </section>
+
+        <section class="registo">
+            <form id="formulario-contacto" action="https://formspree.io/f/mlgwygpn" method="POST">
+                <div class="campo">
+                    <label for="nome">O seu Nome:</label>
+                    <input type="text" id="nome" name="name" required placeholder="Escreva o seu nome...">
+                </div>
+
+                <div class="campo">
+                    <label for="email">O seu E-mail:</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="exemplo@email.com">
+                </div>
+
+                <div class="campo">
+                    <label for="assunto">Assunto:</label>
+                    <select id="assunto" name="subject">
+                        <option value="Sugestão de Clube">Sugestão de Clube</option>
+                        <option value="Informações">Pedido de Informações</option>
+                        <option value="Parceria">Parceria</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="message" rows="5" required placeholder="Como podemos ajudar?"></textarea>
+                </div>
+
+                <input type="hidden" name="_subject" value="Novo contacto: Porto de Encontro na Leitura">
+                <button type="submit" id="botao-enviar">Enviar Mensagem</button>
+
+                <p id="status-envio" style="margin-top: 15px; font-weight: bold;"></p>
+            </form>
+
+            <div id="sucesso-container" style="display: none; text-align: center; padding: 20px; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px;">
+                <h3 style="color: #155724;">✅ Mensagem Enviada!</h3>
+                <p style="color: #155724;">Obrigado pelo seu contacto. Responderemos o mais brevemente possível.</p>
+                <button onclick="window.location.reload()" style="margin-top: 15px; background-color: #155724; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Enviar outra mensagem</button>
+            </div>
+        </section>
+
+        <section class="whatsapp-contact">
+           <h3>Fale connosco por WhatsApp</h3>
+            <p>Se preferir uma resposta mais rápida, envie-nos uma mensagem direta:</p>
+            <a href="https://wa.me/351968218965?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20Clubes%20de%20Leitura." 
+               target="_blank" 
+               class="btn-whatsapp">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="wa-icon">
+                Enviar mensagem
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <span class="copyright">Copyright &copy; 2026 📚 Porto de Encontro na Leitura</span>
+            <div class="social">
+                <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="FB" class="social-icon"></a>
+                <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="IG" class="social-icon"></a>
+                <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3256/3256013.png" alt="TW" class="social-icon"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById("formulario-contacto");
+        const statusEnvio = document.getElementById("status-envio");
+        const sucessoContainer = document.getElementById("sucesso-container");
+
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            
+            statusEnvio.innerHTML = "A enviar...";
+            statusEnvio.style.color = "#2c3e50";
+
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    form.style.display = "none";
+                    sucessoContainer.style.display = "block";
+                } else {
+                    response.json().then(data => {
+                        statusEnvio.style.color = "red";
+                        statusEnvio.innerHTML = "Erro: " + (data.errors ? data.errors[0].message : "Não foi possível enviar.");
+                    });
+                }
+            }).catch(error => {
+                statusEnvio.style.color = "red";
+                statusEnvio.innerHTML = "Erro de ligação. Verifique a sua internet.";
+            });
+        });
+    </script>
+</body>
+</html>
