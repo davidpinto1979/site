@@ -15,7 +15,8 @@ header {
     color: white;
     padding: 0 2rem;
     display: flex;
-    justify-content: space-between; /* Empurra um grupo para a esquerda e outro para a direita */
+    justify-content: space-between;
+    /* Empurra um grupo para a esquerda e outro para a direita */
     align-items: center;
     border-bottom: 4px solid #d35400;
     position: fixed;
@@ -34,24 +35,27 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    justify-content: center; /* Centra a imagem dentro do círculo */
-    
+    justify-content: center;
+    /* Centra a imagem dentro do círculo */
+
     /* Define o tamanho do círculo */
-    width: 50px;  /* Ligeiramente menor que a altura do header (60px) */
+    width: 50px;
+    /* Ligeiramente menor que a altura do header (60px) */
     height: 50px;
-    
+
     /* Cria a forma circular branca */
     background-color: white;
-    border-radius: 50%; /* Torna o quadrado num círculo perfeito */
-    
+    border-radius: 50%;
+    /* Torna o quadrado num círculo perfeito */
+
     /* Adiciona uma borda fina para destacar (Opcional) */
-    border: 2px solid #ecf0f1; 
-    
+    border: 2px solid #ecf0f1;
+
     /* Garante que o círculo não deforma */
-    flex-shrink: 0; 
-    
+    flex-shrink: 0;
+
     /* Espaçamento em relação ao texto à direita */
-    margin-right: 15px; 
+    margin-right: 15px;
 }
 
 
@@ -59,22 +63,24 @@ header {
     /* A imagem deve ser menor que o círculo */
     height: 50px;
     width: auto;
-    
+
     /* Garante que a imagem não sai fora do círculo */
-    max-width: 99%; 
+    max-width: 99%;
     max-height: 99%;
-    
+
     display: block;
 }
 
 .logo-text {
-    font-size: 1.6rem; /* Texto maior */
+    font-size: 1.6rem;
+    /* Texto maior */
     font-weight: bold;
     white-space: nowrap;
 }
 
 .sub-text {
-    font-size: 0.9rem; /* Texto mais pequeno */
+    font-size: 0.9rem;
+    /* Texto mais pequeno */
     opacity: 0.9;
     margin: 0;
     font-style: italic;
@@ -84,7 +90,8 @@ header {
 nav {
     background-color: #34495e;
     position: fixed;
-    top: 60px; /* Logo abaixo do header */
+    top: 60px;
+    /* Logo abaixo do header */
     width: 100%;
     z-index: 999;
 }
@@ -120,22 +127,33 @@ nav a:hover {
 }
 
 
-
 main {
     max-width: 900px;
-    margin: 120px auto 80px auto; 
+    margin: 120px auto 80px auto;
     padding: 20px;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+
+.aviso-temporario {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ffeeba;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
 
 .clube-card {
     border-left: 5px solid #d35400;
     margin-bottom: 1.5rem;
     padding: 1.5rem;
     background: #fdfdfd;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .clube-card h3 {
@@ -173,7 +191,8 @@ table {
     margin: 20px 0;
 }
 
-table th, table td {
+table th,
+table td {
     padding: 12px;
     border: 1px solid #ddd;
     text-align: left;
@@ -212,32 +231,39 @@ footer {
     bottom: 0;
     width: 100%;
     z-index: 1000;
-    padding: 5px 2rem; /* Reduzido para ser muito mais fino */
-    height: 40px; /* Altura fixa reduzida */
+    padding: 5px 2rem;
+    /* Reduzido para ser muito mais fino */
+    height: 40px;
+    /* Altura fixa reduzida */
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Alinha tudo à direita */
+    justify-content: flex-end;
+    /* Alinha tudo à direita */
 }
 
 .footer-container {
     display: flex;
     align-items: center;
-    gap: 20px; /* Espaço entre o texto e os ícones */
+    gap: 20px;
+    /* Espaço entre o texto e os ícones */
 }
 
 .copyright {
-    font-size: 0.85rem; /* Texto ligeiramente menor para caber na linha fina */
+    font-size: 0.85rem;
+    /* Texto ligeiramente menor para caber na linha fina */
 }
 
 .social {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: 0; /* Remove a margem superior anterior */
+    margin-top: 0;
+    /* Remove a margem superior anterior */
 }
 
 .social-icon {
-    width: 18px; /* Ícones menores para o rodapé fino */
+    width: 18px;
+    /* Ícones menores para o rodapé fino */
     height: 18px;
     transition: transform 0.3s;
 }
@@ -249,14 +275,16 @@ footer {
 .creditos-formacao {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid #eee; /* Uma linha subtil para separar do formulário */
+    border-top: 1px solid #eee;
+    /* Uma linha subtil para separar do formulário */
     text-align: center;
     font-size: 0.9rem;
     color: #666;
 }
 
 .creditos-formacao a {
-    color: #007bff; /* Cor azul padrão para links */
+    color: #007bff;
+    /* Cor azul padrão para links */
     text-decoration: none;
     font-weight: bold;
 }
@@ -273,13 +301,18 @@ footer {
     header {
         padding: 0.5rem 1rem;
     }
-    
-    .logo { font-size: 1.2rem; }
 
-    nav a { padding: 0.5rem 0.8rem; }
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    nav a {
+        padding: 0.5rem 0.8rem;
+    }
 
     main {
-        margin-top: 140px; /* Mais espaço no topo se o menu quebrar linha */
+        margin-top: 140px;
+        /* Mais espaço no topo se o menu quebrar linha */
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -287,6 +320,7 @@ footer {
     .sub-text {
         display: none;
     }
+
     .logo-text {
         font-size: 1.1rem;
     }
@@ -296,6 +330,7 @@ footer {
         height: auto;
         padding: 10px;
     }
+
     .footer-container {
         flex-direction: column;
         gap: 5px;
@@ -306,17 +341,20 @@ footer {
 @media screen and (max-width: 850px) {
     header {
         flex-direction: column;
-        height: auto; /* Deixa o header crescer se o nome for muito grande */
+        height: auto;
+        /* Deixa o header crescer se o nome for muito grande */
         padding: 10px;
     }
-    
+
     nav {
-        top: auto; /* O menu ajusta-se à nova altura do header */
-        position: relative; 
+        top: auto;
+        /* O menu ajusta-se à nova altura do header */
+        position: relative;
     }
-    
+
     main {
-        margin-top: 20px; /* Reset da margem quando não é fixo no mobile */
+        margin-top: 20px;
+        /* Reset da margem quando não é fixo no mobile */
     }
 }
 
@@ -341,7 +379,9 @@ footer {
     color: #2c3e50;
 }
 
-.campo input, .campo select, .campo textarea {
+.campo input,
+.campo select,
+.campo textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -383,7 +423,7 @@ footer {
     font-size: 1.1rem;
     transition: 0.3s;
     margin-top: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn-whatsapp:hover {
@@ -394,31 +434,37 @@ footer {
 .wa-icon {
     width: 25px;
     height: 25px;
-    filter: brightness(0) invert(1); /* Torna o ícone branco */
+    filter: brightness(0) invert(1);
+    /* Torna o ícone branco */
 }
 
 /* Estilos para o logótipo de destaque na Home */
 .main-logo-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 25px; /* Espaço entre a imagem e o título H2 */
+    margin-bottom: 25px;
+    /* Espaço entre a imagem e o título H2 */
 }
 
 .main-logo-img {
-    max-width: 250px; /* Tamanho de destaque */
+    max-width: 250px;
+    /* Tamanho de destaque */
     height: auto;
-    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.1)); /* Sombra suave para profundidade */
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.1));
+    /* Sombra suave para profundidade */
     transition: transform 0.5s ease;
 }
 
 .main-logo-img:hover {
-    transform: scale(1.05); /* Efeito subtil de zoom ao passar o rato */
+    transform: scale(1.05);
+    /* Efeito subtil de zoom ao passar o rato */
 }
 
 /* Ajuste para telemóveis */
 @media screen and (max-width: 600px) {
     .main-logo-img {
-        max-width: 180px; /* Um pouco menor em ecrãs pequenos */
+        max-width: 180px;
+        /* Um pouco menor em ecrãs pequenos */
     }
 }
 
@@ -447,9 +493,10 @@ section .titulo h2 {
 
 section .conteudo {
     display: flex;
-    flex-wrap: wrap;       /* Permite que as miniaturas passem para baixo */
+    flex-wrap: wrap;
+    /* Permite que as miniaturas passem para baixo */
     gap: 15px;
-    justify-content: center; 
+    justify-content: center;
     align-items: flex-start;
 }
 
@@ -466,26 +513,32 @@ section .conteudo p {
 
 /* Estilo para a imagem de destaque (a primeira) */
 .foto-principal {
-    flex: 1 1 100%;        /* OBRIGA a imagem principal a ocupar a linha toda */
+    flex: 1 1 100%;
+    /* OBRIGA a imagem principal a ocupar a linha toda */
     display: flex;
     flex-direction: column;
-    align-items: center;   /* Centra a imagem e o texto "Ver Galeria" */
+    align-items: center;
+    /* Centra a imagem e o texto "Ver Galeria" */
     margin-bottom: 20px;
 }
 
 .foto-principal img {
     width: 100%;
-    max-width: 800px;      /* Pode ajustar o tamanho máximo da foto principal aqui */
-    height: auto;          /* Mantém a proporção original */
-    max-height: 500px;     /* Evita que fique gigante em ecrãs muito grandes */
+    max-width: 800px;
+    /* Pode ajustar o tamanho máximo da foto principal aqui */
+    height: auto;
+    /* Mantém a proporção original */
+    max-height: 500px;
+    /* Evita que fique gigante em ecrãs muito grandes */
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Estilo para as miniaturas */
 .miniatura {
-    width: 150px;          /* Tamanho fixo para as miniaturas */
+    width: 150px;
+    /* Tamanho fixo para as miniaturas */
     height: 100px;
 }
 
@@ -521,11 +574,13 @@ section .conteudo p {
     margin-top: 5px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Corta o texto se for muito longo */
+    text-overflow: ellipsis;
+    /* Corta o texto se for muito longo */
 }
 
 /* Garante que o link não tenha sublinhado por defeito */
-.miniatura a, .foto-principal a {
+.miniatura a,
+.foto-principal a {
     text-decoration: none;
     display: block;
 }
